@@ -1,0 +1,16 @@
+{
+  "name": "php-sreps",
+  "version": "1.0.0",
+  "description": "Sales Reporting and Prediction System for People Health Pharmacy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.1"
+  },
+  "author": "Denny Son Le",
+  "license": "CC0-1.0"
+}
