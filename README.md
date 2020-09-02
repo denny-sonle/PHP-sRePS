@@ -16,14 +16,14 @@ Node JS back-end with ejs templating engine\*.
 
 ```bash
 # install dependencies
-npm run install
+npm install
 
 # run
-node app.js
+npm run dev
 ```
 
 <br/><br/>
 
 ## Author
 
-[Denny Son Le](https://github.com/denny-sonle)
+[Dennis Son Le](https://github.com/denny-sonle)
