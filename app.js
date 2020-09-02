@@ -27,11 +27,10 @@ mongoose
 
 // Routes
 // app.get('*', checkUser);
-app.use('/', (req, res) => res.render('home', {
+app.get('/', (req, res) => res.render('home', {
     version: packageJson.version
 }));
-// app.use('/users', require('./routes/users.js'));
-// app.use('/slots', require('./routes/slots.js'));
+app.use(authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
