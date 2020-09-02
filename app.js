@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const packageJson = require('./package.json');
 // const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 require('dotenv').config();
 
@@ -27,7 +28,7 @@ mongoose
 // Routes
 // app.get('*', checkUser);
 app.use('/', (req, res) => res.render('home', {
-    version: "1.0"
+    version: packageJson.version
 }));
 // app.use('/users', require('./routes/users.js'));
 // app.use('/slots', require('./routes/slots.js'));
