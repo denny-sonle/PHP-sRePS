@@ -1,8 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/authRoutes');
+const allRoutes = require('./routes/allRoutes');
 const cookieParser = require('cookie-parser');
-const packageJson = require('./package.json');
 // const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 require('dotenv').config();
 
@@ -26,11 +25,7 @@ mongoose
     .catch(err => console.log(err));
 
 // Routes
-// app.get('*', checkUser);
-app.get('/', (req, res) => res.render('home', {
-    version: packageJson.version
-}));
-app.use(authRoutes);
+app.use(allRoutes);
 
 const PORT = process.env.PORT || 5000;
 
