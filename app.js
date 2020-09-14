@@ -25,7 +25,7 @@ mongoose
     .catch(err => console.log(err));
 
 // Routes
-app.use(allRoutes);
+app.use('/api/v1', allRoutes);
 
 const PORT = process.env.PORT || 5000;
 

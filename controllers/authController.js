@@ -42,17 +42,16 @@ const createToken = (id) => {
     });
 };
 
-module.exports.signup_get = (req, res) => {
-    res.send('signup');
-}
-
 module.exports.signup_post = async (req, res) => {
-    const { first_name, last_name, email, password, isAdmin } = req.body;
+    const { first_name, last_name, email, password } = req.body;
     try {
-        const user = await User.create({ first_name, last_name, email, password, isAdmin });
+        const user = await User.create({ first_name, last_name, email, password });
         const token = createToken(user.id);
-        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-        res.status(201).json({ user: user._id });
+
+        res.status(201).json({
+            "user": user._id,
+            "token": token
+        });
     }
     catch (err) {
         console.log(err)
@@ -60,12 +59,6 @@ module.exports.signup_post = async (req, res) => {
         console.log(errors)
         res.status(400).json({ errors });
     }
-}
-
-module.exports.login_get = (req, res) => {
-    res.render('login', {
-        version: packageJson.version
-    });
 }
 
 module.exports.login_post = (req, res) => {
