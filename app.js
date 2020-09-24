@@ -26,6 +26,9 @@ mongoose
 
 // Routes
 app.use('/api/v1', allRoutes);
+app.use('/', (req, res) => {
+    res.status(200).send("Welcome to sRePS")
+});
 
 const PORT = process.env.PORT || 5000;
 
